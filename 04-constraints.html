@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>Functional Overview</title>
+<title>Constraints</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -439,16 +439,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Functional Overview</h1>
+<h1>Constraints</h1>
 <div class="details">
 <span id="revnumber">version 0.0.3-SNAPSHOT,</span>
-<span id="revdate">2020-04-10T18:04:45Z</span>
+<span id="revdate">2020-04-10T18:16:45Z</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#for-a-waiting-person">1. For a waiting person</a></li>
-<li><a href="#for-someone-in-a-transport">2. For someone in a transport</a></li>
+<li><a href="#common-constraints">1. Common constraints</a></li>
 </ul>
 </div>
 </div>
@@ -463,42 +462,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 If you encounter any error, feel free to
-<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Functional%20Overview" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>This system allows a person waiting for a public transport to have informations on transport schedule, as provided by people upstream in the same public transport.
-Imagine that as a crowdsourced SMS from a friend.</p>
-</div>
-<div class="paragraph">
-<p>Features are quite simple.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="for-a-waiting-person"><a class="anchor" href="#for-a-waiting-person"></a>1. For a waiting person</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>When someone waits for a transport, kafkatrain detects (from user location and timetables) which are the possible transports the person wants to go in.
-If multiple transports matches, the application allows user to select which transport he is waiting for.
-Once a transport has been selected, information from upstream users is presented.
-This information will typically take the form of</p>
-</div>
-<div class="quoteblock">
-<blockquote>
-At stop "name of stop", transport was "on time|late by n minutes"
-</blockquote>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-As of today, we don&#8217;t envision the UI of application
+<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Constraints" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
 </td>
 </tr>
 </table>
@@ -506,10 +470,65 @@ As of today, we don&#8217;t envision the UI of application
 </div>
 </div>
 <div class="sect1">
-<h2 id="for-someone-in-a-transport"><a class="anchor" href="#for-someone-in-a-transport"></a>2. For someone in a transport</h2>
+<h2 id="common-constraints"><a class="anchor" href="#common-constraints"></a>1. Common constraints</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Once the user is in the public transport, and the transport is moving, application simply sends a message notifying the system that transport is on way.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Time, budget and resources</dt>
+<dd>
+<p>Project will be built by Nicolas Delsaux and Logan Hauspie.
+Budget is zero, as it is an example.
+Application is expected to be delivered &#8230;&#8203; one day</p>
+</dd>
+<dt class="hdlist1">Approved technology lists and technology constraints</dt>
+<dd>
+<p>Server-side components of application will be depolyed as containers.</p>
+</dd>
+<dt class="hdlist1">Target deployment platform</dt>
+<dd>
+<p>Application will be deployed on Google Kubernetes Cluster.</p>
+</dd>
+<dt class="hdlist1">Existing systems and integration standards</dt>
+<dd>
+<p>TODO</p>
+</dd>
+<dt class="hdlist1">Local standards (e.g. development, coding, etc)</dt>
+<dd>
+<p>TODO</p>
+</dd>
+<dt class="hdlist1">Public standards (e.g. HTTP, SOAP, XML, XML Schema, WSDL, etc)</dt>
+<dd>
+<p>TODO</p>
+</dd>
+<dt class="hdlist1">Standard protocols</dt>
+<dd>
+<p>TODO</p>
+</dd>
+<dt class="hdlist1">Standard message formats</dt>
+<dd>
+<p>TODO</p>
+</dd>
+<dt class="hdlist1">Size of the software development team</dt>
+<dd>
+<p>Two persons at best</p>
+</dd>
+<dt class="hdlist1">Skill profile of the software development team</dt>
+<dd>
+<p>Developers are skilled on server-side, less on front-end.</p>
+</dd>
+<dt class="hdlist1">Nature of the software being built (e.g. tactical or strategic)</dt>
+<dd>
+<p>Strategic, as it is the only product of our startup.</p>
+</dd>
+<dt class="hdlist1">Political constraints</dt>
+<dd>
+<p>TODO</p>
+</dd>
+<dt class="hdlist1">Use of internal intellectual property</dt>
+<dd>
+<p>TODO</p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
@@ -517,7 +536,7 @@ As of today, we don&#8217;t envision the UI of application
 <div id="footer">
 <div id="footer-text">
 Version 0.0.3-SNAPSHOT<br>
-Last updated 2020-04-10 18:04:28 UTC
+Last updated 2020-04-10 18:16:28 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">

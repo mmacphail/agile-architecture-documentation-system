@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>Deployment</title>
+<title>Software Architecture</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,15 +437,23 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
-<h1>Deployment</h1>
+<h1>Software Architecture</h1>
 <div class="details">
 <span id="revnumber">version 0.0.3-SNAPSHOT,</span>
-<span id="revdate">2020-04-10T18:04:45Z</span>
+<span id="revdate">2020-04-10T18:16:45Z</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#software-architecture-of-sncfreader-component">1. Software architecture of sncfReader component</a></li>
+</ul>
 </div>
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -454,19 +462,40 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 If you encounter any error, feel free to
-<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Deployment" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
+<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Software%20Architecture" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
 </td>
 </tr>
 </table>
 </div>
+<div class="imageblock">
+<div class="content">
+<object type="image/svg+xml" data="./images/kafkatrain.containers.svg" width="308" height="253"><span class="alt">kafkatrain.containers</span></object>
+</div>
+</div>
 <div class="paragraph">
-<p><strong>TODO</strong></p>
+<p>We use Kafka to fully isolate load between sncfReader and storage.
+We use ElasticSearch to provide various search directions, as we will request search based on geographic criterais as well as proximity.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="software-architecture-of-sncfreader-component"><a class="anchor" href="#software-architecture-of-sncfreader-component"></a>1. Software architecture of sncfReader component</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<object type="image/svg+xml" data="./images/sncfReader.components.svg" width="350" height="253"><span class="alt">sncfReader.components</span></object>
+</div>
+</div>
+<div class="paragraph">
+<p>This one is quite simple : one verticle reads data from Navitia HTTP endpoint, send the obtained data through Vert.x event bus to another which outpus data to a Kafka stream.</p>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 0.0.3-SNAPSHOT<br>
-Last updated 2020-04-10 18:04:28 UTC
+Last updated 2020-04-10 18:16:28 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">

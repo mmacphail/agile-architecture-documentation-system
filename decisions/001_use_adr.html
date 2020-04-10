@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>Quality Attributes</title>
+<title>Use ADR to document architecture decisions</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -439,156 +439,153 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Quality Attributes</h1>
+<h1>Use ADR to document architecture decisions</h1>
 <div class="details">
 <span id="revnumber">version 0.0.3-SNAPSHOT,</span>
-<span id="revdate">2020-04-10T18:04:45Z</span>
+<span id="revdate">2020-04-10T18:16:45Z</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#common-constraints">1. Common constraints</a></li>
-<li><a href="#specifc-constraints">2. Specifc constraints</a>
+<li><a href="#decision">1. Decision</a></li>
+<li><a href="#status">2. Status</a></li>
+<li><a href="#context">3. Context</a></li>
+<li><a href="#alternatives">4. Alternatives</a>
 <ul class="sectlevel2">
-<li><a href="#ingesting-time-tables">2.1. Ingesting time tables</a></li>
-<li><a href="#ingestion-real-time-positions">2.2. Ingestion real-time positions</a></li>
-<li><a href="#seeing-train-delays">2.3. Seeing train delays</a></li>
-<li><a href="#informing-application-that-transport-is-running">2.4. Informing application that transport is running</a></li>
+<li><a href="#use-decisions-in-asciidoc">4.1. Use decisions in Asciidoc</a></li>
+<li><a href="#use-another-format">4.2. Use another format</a></li>
 </ul>
 </li>
+<li><a href="#consequences">5. Consequences</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-If you encounter any error, feel free to
-<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Quality%20Attributes" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Date: 2020-01-14</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="common-constraints"><a class="anchor" href="#common-constraints"></a>1. Common constraints</h2>
+<h2 id="decision"><a class="anchor" href="#decision"></a>1. Decision</h2>
 <div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Performance (e.g. latency and throughput)</dt>
-<dd>
-<p>All users should have application available in 5 seconds.</p>
-</dd>
-<dt class="hdlist1">Scalability (e.g. data and traffic volumes)</dt>
-<dd>
-<p>We expect a first deployment with 1.000 users (and 100 simultaneous connections of users)</p>
-</dd>
-<dt class="hdlist1">Availability (e.g. uptime, downtime, scheduled maintenance, 24x7,99.9%, etc)</dt>
-<dd>
-<p>Application will initially be available on a <a href="https://uptime.is/99.9">99.9% basis</a></p>
-</dd>
-<dt class="hdlist1">Security (e.g. authentication, authorisation, data confidentiality, etc)</dt>
-<dd>
-<p>No user data should be stored by system.
-Authentication and authorization will be managed using OpenID Connect with the usual id providers (Google, Facebook, &#8230;&#8203;)</p>
-</dd>
-<dt class="hdlist1">Extensibility</dt>
-<dd>
-<p>Application will be extended to various geographic areas and types of public transport systems (buses, trains, boats), but there will be no feature extensibility</p>
-</dd>
-<dt class="hdlist1">Flexibility</dt>
-<dd>
-<p>Application is not supposed to be flexible</p>
-</dd>
-<dt class="hdlist1">Auditing</dt>
-<dd>
-<p>We must be able to audit the timetables provided by Navitia as well as the real-time positions.
-We must also be able to audit what informations users in transit send
-to blacklist the ones that will (because shit happens) try to abuse the system.</p>
-</dd>
-<dt class="hdlist1">Monitoring and management</dt>
-<dd>
-<p>Usual system monitoring will be used.</p>
-</dd>
-<dt class="hdlist1">Reliability</dt>
-<dd>
-<p>Besides, we will monitor the number of users in transit and waiting and the delay between the time when one user starts his transit and another, on the same line, receive the delay information.</p>
-</dd>
-<dt class="hdlist1">Failover/disaster recovery targets (e.g. manual vs automatic, how long will this take?)</dt>
-<dd>
-<p>We should be able to recover data center loss in less than one day.</p>
-</dd>
-<dt class="hdlist1">Business continuity</dt>
-<dd>
-<p>N/A</p>
-</dd>
-<dt class="hdlist1">Interoperability</dt>
-<dd>
-<p>N/A</p>
-</dd>
-<dt class="hdlist1">Legal, compliance and regulatory requirements (e.g. data protection act)</dt>
-<dd>
-<p>N/A</p>
-</dd>
-<dt class="hdlist1">Internationalisation (i18n) and localisation (L10n)</dt>
-<dd>
-<p>Application will be deployed in all countries where public transport systems provide APIs (and have potential delays).
-For the sake of easiness, application will be first deployed in France.</p>
-</dd>
-<dt class="hdlist1">Accessibility</dt>
-<dd>
-<p>Don&#8217;t know how to validate that.</p>
-</dd>
-<dt class="hdlist1">Usability</dt>
-<dd>
-<p>Don&#8217;t know how to validate that.</p>
-</dd>
-</dl>
+<div class="paragraph">
+<p>We will store decisions as asciidoc documents in <code>src/docs/asciidoc/decisions</code>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="specifc-constraints"><a class="anchor" href="#specifc-constraints"></a>2. Specifc constraints</h2>
+<h2 id="status"><a class="anchor" href="#status"></a>2. Status</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>These constraints maps to the relationships expressed in <a href="#Context">[Context]</a></p>
+<p><strong>Accepted</strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="context"><a class="anchor" href="#context"></a>3. Context</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The purpose of this section is to simply record the major decisions that
+have been made, including both the technology choices (e.g. products,
+frameworks, etc) and the overall architecture (e.g. the structure of the
+software, architectural style, decomposition, patterns, etc). For
+example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Why did you choose technology or framework "X" over "Y" and "Z"?</p>
+</li>
+<li>
+<p>How did you do this? Product evaluation or proof of concept?</p>
+</li>
+<li>
+<p>Were you forced into making a decision about "X" based upon corporate
+policy or enterprise architecture strategies?</p>
+</li>
+<li>
+<p>Why did you choose the selected software architecture? What other
+options did you consider?</p>
+</li>
+<li>
+<p>How do you know that the solution satisfies the major quality
+attributes?</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="alternatives"><a class="anchor" href="#alternatives"></a>4. Alternatives</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="use-decisions-in-asciidoc"><a class="anchor" href="#use-decisions-in-asciidoc"></a>4.1. Use decisions in Asciidoc</h3>
+<div class="sect3">
+<h4 id="pros"><a class="anchor" href="#pros"></a>4.1.1. PROS</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Decisions will be integrated in generated documentation</p>
+</li>
+<li>
+<p>Rendering will be optimal</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="cons"><a class="anchor" href="#cons"></a>4.1.2. CONS</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Decisions will be burried deep inside Asciidoc hiearchy</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="ingesting-time-tables"><a class="anchor" href="#ingesting-time-tables"></a>2.1. Ingesting time tables</h3>
+<h3 id="use-another-format"><a class="anchor" href="#use-another-format"></a>4.2. Use another format</h3>
+<div class="sect3">
+<h4 id="pros-2"><a class="anchor" href="#pros-2"></a>4.2.1. PROS</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Decisions can be put in a specific folder</p>
+</li>
+<li>
+<p>We can use "tooling" to access those decisions</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="cons-2"><a class="anchor" href="#cons-2"></a>4.2.2. CONS</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Decisions will be isolate from architecture documentation</p>
+</li>
+<li>
+<p>Decision rendering will use another tooling (typically Markdown)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="consequences"><a class="anchor" href="#consequences"></a>5. Consequences</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Ingesting time tables from Navitia should be done each day.
-The process should be monitored since there should be no day where this data is not ingested.
-THis ingestion should be done prior the first release (application has no interest without that).</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="ingestion-real-time-positions"><a class="anchor" href="#ingestion-real-time-positions"></a>2.2. Ingestion real-time positions</h3>
-<div class="paragraph">
-<p>This should be done in a continuous stream.
-Ingestion should not have delay greater than one minute.
-Application should be able to work without this information.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="seeing-train-delays"><a class="anchor" href="#seeing-train-delays"></a>2.3. Seeing train delays</h3>
-<div class="paragraph">
-<p>Delays should be communicated to user in less than 1 s.
-If user connection to system dont allow that, delays will be sent to user with a notification indicating that network is not performant enough to have accurate timetables.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="informing-application-that-transport-is-running"><a class="anchor" href="#informing-application-that-transport-is-running"></a>2.4. Informing application that transport is running</h3>
-<div class="paragraph">
-<p>A transport is considered as moving after 5 seconds of continuous move.
-After this delay, signal should be sent in less than 1 s.</p>
-</div>
+<p>Integrating decisions in Asciidoc requires changing a section of architecture.</p>
 </div>
 </div>
 </div>
@@ -596,7 +593,7 @@ After this delay, signal should be sent in less than 1 s.</p>
 <div id="footer">
 <div id="footer-text">
 Version 0.0.3-SNAPSHOT<br>
-Last updated 2020-04-10 18:04:28 UTC
+Last updated 2020-04-10 18:16:28 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">

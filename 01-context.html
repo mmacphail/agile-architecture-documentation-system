@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>Constraints</title>
+<title>Context</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -439,15 +439,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Constraints</h1>
+<h1>Context</h1>
 <div class="details">
 <span id="revnumber">version 0.0.3-SNAPSHOT,</span>
-<span id="revdate">2020-04-10T18:04:45Z</span>
+<span id="revdate">2020-04-10T18:16:45Z</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#common-constraints">1. Common constraints</a></li>
+<li><a href="#context-diagram">1. Context diagram</a></li>
+<li><a href="#what-is-this-softare-system-about">2. What is this softare system about ?</a></li>
+<li><a href="#what-is-it-thats-being-built">3. What is it that&#8217;s being built?</a></li>
+<li><a href="#how-does-it-fit-into-the-existing-environment-e-g-systems-business">4. How does it fit into the existing environment? (e.g. systems, business</a></li>
+<li><a href="#who-is-using-it-users-roles-actors-personas-etc">5. Who is using it? (users, roles, actors, personas, etc)</a></li>
 </ul>
 </div>
 </div>
@@ -462,7 +466,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 If you encounter any error, feel free to
-<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Constraints" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
+<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Context" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
 </td>
 </tr>
 </table>
@@ -470,65 +474,77 @@ If you encounter any error, feel free to
 </div>
 </div>
 <div class="sect1">
-<h2 id="common-constraints"><a class="anchor" href="#common-constraints"></a>1. Common constraints</h2>
+<h2 id="context-diagram"><a class="anchor" href="#context-diagram"></a>1. Context diagram</h2>
 <div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Time, budget and resources</dt>
-<dd>
-<p>Project will be built by Nicolas Delsaux and Logan Hauspie.
-Budget is zero, as it is an example.
-Application is expected to be delivered &#8230;&#8203; one day</p>
-</dd>
-<dt class="hdlist1">Approved technology lists and technology constraints</dt>
-<dd>
-<p>Server-side components of application will be depolyed as containers.</p>
-</dd>
-<dt class="hdlist1">Target deployment platform</dt>
-<dd>
-<p>Application will be deployed on Google Kubernetes Cluster.</p>
-</dd>
-<dt class="hdlist1">Existing systems and integration standards</dt>
-<dd>
-<p>TODO</p>
-</dd>
-<dt class="hdlist1">Local standards (e.g. development, coding, etc)</dt>
-<dd>
-<p>TODO</p>
-</dd>
-<dt class="hdlist1">Public standards (e.g. HTTP, SOAP, XML, XML Schema, WSDL, etc)</dt>
-<dd>
-<p>TODO</p>
-</dd>
-<dt class="hdlist1">Standard protocols</dt>
-<dd>
-<p>TODO</p>
-</dd>
-<dt class="hdlist1">Standard message formats</dt>
-<dd>
-<p>TODO</p>
-</dd>
-<dt class="hdlist1">Size of the software development team</dt>
-<dd>
-<p>Two persons at best</p>
-</dd>
-<dt class="hdlist1">Skill profile of the software development team</dt>
-<dd>
-<p>Developers are skilled on server-side, less on front-end.</p>
-</dd>
-<dt class="hdlist1">Nature of the software being built (e.g. tactical or strategic)</dt>
-<dd>
-<p>Strategic, as it is the only product of our startup.</p>
-</dd>
-<dt class="hdlist1">Political constraints</dt>
-<dd>
-<p>TODO</p>
-</dd>
-<dt class="hdlist1">Use of internal intellectual property</dt>
-<dd>
-<p>TODO</p>
-</dd>
-</dl>
+<div class="imageblock">
+<div class="content">
+<object type="image/svg+xml" data="./images/SystemContext.svg" width="308" height="253"><span class="alt">SystemContext</span></object>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="what-is-this-softare-system-about"><a class="anchor" href="#what-is-this-softare-system-about"></a>2. What is this softare system about ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Getting "true" public transport delay is often impossible.
+Because the organism responsible for displaying delays is also the organism that allow transports to run.
+As a consequence, it is not always their best move to display effective transport delay.
+This system exists to overcome that.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="what-is-it-thats-being-built"><a class="anchor" href="#what-is-it-thats-being-built"></a>3. What is it that&#8217;s being built?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We will build a system that allow us to easily compare official time table with effective transport delay by</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Asking users in transports to tell us if transport is late or not</p>
+</li>
+<li>
+<p>Comparing effective transport location with the one provided by real-time location, when it exists</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="how-does-it-fit-into-the-existing-environment-e-g-systems-business"><a class="anchor" href="#how-does-it-fit-into-the-existing-environment-e-g-systems-business"></a>4. How does it fit into the existing environment? (e.g. systems, business</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>processes, etc)</p>
+</div>
+<div class="paragraph">
+<p>As we&#8217;re doing this as a startup, we have no internal context.
+However, there is an external context.</p>
+</div>
+<div class="paragraph">
+<p>We will use services of <a href="https://www.navitia.io/">navitia</a>, which provides time tables for all France cities public transport systems, but also intercity train.</p>
+</div>
+<div class="paragraph">
+<p>We will also use geolocation services provided by SNCF (for intercity trains) and other providers wher possible.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="who-is-using-it-users-roles-actors-personas-etc"><a class="anchor" href="#who-is-using-it-users-roles-actors-personas-etc"></a>5. Who is using it? (users, roles, actors, personas, etc)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We currently envision two types of useers (who can in fact be the same person at different times)</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The waiting user, to which we will send accurate crossing schedule information.</p>
+</li>
+<li>
+<p>The user already in transport, which can inform waiting user if the train was on time or not</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -536,7 +552,7 @@ Application is expected to be delivered &#8230;&#8203; one day</p>
 <div id="footer">
 <div id="footer-text">
 Version 0.0.3-SNAPSHOT<br>
-Last updated 2020-04-10 18:04:28 UTC
+Last updated 2020-04-10 18:16:28 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">

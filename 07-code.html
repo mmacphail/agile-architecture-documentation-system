@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>Operation and Support</title>
+<title>Code</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,15 +437,29 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
-<h1>Operation and Support</h1>
+<h1>Code</h1>
 <div class="details">
 <span id="revnumber">version 0.0.3-SNAPSHOT,</span>
-<span id="revdate">2020-04-10T18:04:45Z</span>
+<span id="revdate">2020-04-10T18:16:45Z</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#kafkatrain">1. kafkatrain</a>
+<ul class="sectlevel2">
+<li><a href="#avoir-un-train-à-lheure-cest-kafkaïen">1.1. Avoir un train à l&#8217;heure, c&#8217;est kafkaïen</a></li>
+<li><a href="#sncf-reader">1.2. sncf-reader</a></li>
+<li><a href="#web-ui">1.3. web-ui</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -454,7 +468,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 If you encounter any error, feel free to
-<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Operation%20and%20Support" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
+<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Code" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
 </td>
 </tr>
 </table>
@@ -463,10 +477,150 @@ If you encounter any error, feel free to
 <p><strong>TODO</strong></p>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="kafkatrain"><a class="anchor" href="#kafkatrain"></a>1. kafkatrain</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://github.com/Riduidel/snowcamp-2019">See on <span class="icon"><i class="fa fa-github"></i></span> GitHub</a></p>
+</div>
+<div class="sect2">
+<h3 id="avoir-un-train-à-lheure-cest-kafkaïen"><a class="anchor" href="#avoir-un-train-à-lheure-cest-kafkaïen"></a>1.1. Avoir un train à l&#8217;heure, c&#8217;est kafkaïen</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Repository principal de notre présentation à Snowcamp 2019</p>
+</div>
+</blockquote>
+</div>
+<div class="sect3">
+<h4 id="what-does-this-repository-contains"><a class="anchor" href="#what-does-this-repository-contains"></a>1.1.1. What does this repository contains ?</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>src/build</code> contains various build scripts</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>0-install.sh</code> installs the environment, provided the secrets are known</p>
+</li>
+<li>
+<p><code>1-write-reader-code.bat</code> copies reader code in its own repository</p>
+</li>
+<li>
+<p><code>2-write-web-ui.bat</code> copies web ui in its own repository</p>
+</li>
+<li>
+<p><code>delete.bat</code> deletes the cluster, and the various generated projects</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>src/k8s</code> contains all deployed into k8s cluster</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>elastic</code> provides ingresses for Kibana and Elasticsearch (<strong>DON&#8217;T DO THAT IN PROD</strong>)</p>
+</li>
+<li>
+<p><code>kafka</code> installs all additionnal applications for kafka</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="meta"><a class="anchor" href="#meta"></a>1.1.2. Meta</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Logan Hauspie – <a href="https://twitter.com/lhauspie">@lhauspie</a></p>
+</li>
+<li>
+<p>Nicolas Delsaux – <a href="https://twitter.com/Riduidel">@Riduidel</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="contributing"><a class="anchor" href="#contributing"></a>1.1.3. Contributing</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Fork it (&lt;<a href="https://github.com/Riduidel/snowcamp-2019/fork&gt;" class="bare">https://github.com/Riduidel/snowcamp-2019/fork&gt;</a>)</p>
+</li>
+<li>
+<p>Create your feature branch (<code>git checkout -b feature/fooBar</code>)</p>
+</li>
+<li>
+<p>Commit your changes (<code>git commit -am 'Add some fooBar'</code>)</p>
+</li>
+<li>
+<p>Push to the branch (<code>git push origin feature/fooBar</code>)</p>
+</li>
+<li>
+<p>Create a new Pull Request</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sncf-reader"><a class="anchor" href="#sncf-reader"></a>1.2. sncf-reader</h3>
+<div class="paragraph">
+<p><a href="https://github.com/Riduidel/snowcamp-2019/blob/master/src/build/reference/sncf-reader">See on <span class="icon"><i class="fa fa-github"></i></span> GitHub</a></p>
+</div>
+<div class="sect3">
+<h4 id="sncf-reader-application"><a class="anchor" href="#sncf-reader-application"></a>1.2.1. sncf-reader application</h4>
+<div class="paragraph">
+<p>This application allows us to inject SNCF timesheets into our Kafka engine, for later processing.</p>
+</div>
+<div class="sect4">
+<h5 id="configuration"><a class="anchor" href="#configuration"></a>Configuration</h5>
+<div class="paragraph">
+<p>This application requires the following environment variables to be set</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>SNCF_READER_TOKEN</code> access token for Navitia API</p>
+</li>
+<li>
+<p><code>SNCF_READER_READ_AT_STARTUP</code> When set to true, immediatly start reading SNCF timesheet</p>
+</li>
+<li>
+<p><code>SNCF_READER_KAFKA_BOOTSTRAP_SERVER</code> url of Kafka server to connect to</p>
+</li>
+<li>
+<p><code>SNCF_READER_TOPIC_SCHEDULE</code> Topic where to post schedule. Defaults to <code>sncfReaderSchedule</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="web-ui"><a class="anchor" href="#web-ui"></a>1.3. web-ui</h3>
+<div class="paragraph">
+<p><a href="https://github.com/Riduidel/snowcamp-2019/blob/master/src/build/reference/web-ui">See on <span class="icon"><i class="fa fa-github"></i></span> GitHub</a></p>
+</div>
+<div class="sect3">
+<h4 id="node"><a class="anchor" href="#node"></a>1.3.1. node</h4>
+<div class="paragraph">
+<p>Simple Hello World that listens on localhost:8080</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
 Version 0.0.3-SNAPSHOT<br>
-Last updated 2020-04-10 18:04:28 UTC
+Last updated 2020-04-10 18:16:28 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
