@@ -437,24 +437,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article toc2 toc-left">
+<body class="article">
 <div id="header">
 <h1>Functional Overview</h1>
 <div class="details">
-<span id="revnumber">version 0.0.3-SNAPSHOT,</span>
-<span id="revdate">2020-04-11T19:47:44Z</span>
-</div>
-<div id="toc" class="toc2">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#for-a-waiting-person">1. For a waiting person</a></li>
-<li><a href="#for-someone-in-a-transport">2. For someone in a transport</a></li>
-</ul>
+<span id="revnumber">version 0.0.4-SNAPSHOT,</span>
+<span id="revdate">2020-06-22T16:29:21Z</span>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -463,61 +454,32 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 If you encounter any error, feel free to
-<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Functional%20Overview" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
+<a href="https://github.com/Riduidel/agile-architecture-documentation-system/issues/new?title=Error%20in%20architecture-documentation%20v.0.0.4-SNAPSHOT%20chapter%20Functional%20Overview" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>This system allows a person waiting for a public transport to have informations on transport schedule, as provided by people upstream in the same public transport.
-Imagine that as a crowdsourced SMS from a friend.</p>
+<p>This software helps the architect writing a coherent, complete and readable software architecture documentation.
+Usage of this software is quite simple (for a developer).</p>
 </div>
 <div class="paragraph">
-<p>Features are quite simple.</p>
+<p>The first step is to initiate a documentation (which is documented in <a href="https://github.com/Riduidel/agile-architecture-documentation-system#install">README.md</a>).</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="for-a-waiting-person"><a class="anchor" href="#for-a-waiting-person"></a>1. For a waiting person</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>When someone waits for a transport, kafkatrain detects (from user location and timetables) which are the possible transports the person wants to go in.
-If multiple transports matches, the application allows user to select which transport he is waiting for.
-Once a transport has been selected, information from upstream users is presented.
-This information will typically take the form of</p>
+<p>Then, architect has to write content in all <code>.adoc</code> files generated in <code>src/docs/asciidoc</code>.
+Notice writing those files will be eased out by using the <code>Architecture</code> java class to generate diagrams,
+and the enhancers this project provides.</p>
 </div>
-<div class="quoteblock">
-<blockquote>
-At stop "name of stop", transport was "on time|late by n minutes"
-</blockquote>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-As of today, we don&#8217;t envision the UI of application
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="for-someone-in-a-transport"><a class="anchor" href="#for-someone-in-a-transport"></a>2. For someone in a transport</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Once the user is in the public transport, and the transport is moving, application simply sends a message notifying the system that transport is on way.</p>
-</div>
-</div>
+<p>The enhancers allows architect to have content added to this documentation without having to write it himself.
+Typically, we&#8217;re able to include README documents, architecture decisions, and more to come later &#8230;&#8203; (well, provided the users ask for additionnal includes)</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 0.0.3-SNAPSHOT<br>
-Last updated 2020-04-11 19:47:27 UTC
+Version 0.0.4-SNAPSHOT<br>
+Last updated 2020-06-22 16:29:09 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">

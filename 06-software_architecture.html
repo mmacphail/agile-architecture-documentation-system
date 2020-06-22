@@ -437,23 +437,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article toc2 toc-left">
+<body class="article">
 <div id="header">
 <h1>Software Architecture</h1>
 <div class="details">
-<span id="revnumber">version 0.0.3-SNAPSHOT,</span>
-<span id="revdate">2020-04-11T19:47:44Z</span>
-</div>
-<div id="toc" class="toc2">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#software-architecture-of-sncfreader-component">1. Software architecture of sncfReader component</a></li>
-</ul>
+<span id="revnumber">version 0.0.4-SNAPSHOT,</span>
+<span id="revdate">2020-06-22T16:29:21Z</span>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -462,40 +454,29 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 If you encounter any error, feel free to
-<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Software%20Architecture" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
+<a href="https://github.com/Riduidel/agile-architecture-documentation-system/issues/new?title=Error%20in%20architecture-documentation%20v.0.0.4-SNAPSHOT%20chapter%20Software%20Architecture" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
 </td>
 </tr>
 </table>
 </div>
 <div class="imageblock">
 <div class="content">
-<object type="image/svg+xml" data="./images/kafkatrain.containers.svg" width="1375" height="773"><span class="alt">kafkatrain.containers</span></object>
+<object type="image/svg+xml" data="./images/agile.architecture.containers.svg" width="604" height="726"><span class="alt">agile.architecture.containers</span></object>
 </div>
 </div>
-<div class="paragraph">
-<p>We use Kafka to fully isolate load between sncfReader and storage.
-We use ElasticSearch to provide various search directions, as we will request search based on geographic criterais as well as proximity.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="software-architecture-of-sncfreader-component"><a class="anchor" href="#software-architecture-of-sncfreader-component"></a>1. Software architecture of sncfReader component</h2>
-<div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<object type="image/svg+xml" data="./images/sncfReader.components.svg" width="1613" height="263"><span class="alt">sncfReader.components</span></object>
+<object type="image/svg+xml" data="./images/agile.architecture.base.components.svg" width="1434" height="1198"><span class="alt">agile.architecture.base.components</span></object>
 </div>
 </div>
 <div class="paragraph">
-<p>This one is quite simple : one verticle reads data from Navitia HTTP endpoint, send the obtained data through Vert.x event bus to another which outpus data to a Kafka stream.</p>
-</div>
-</div>
+<p><strong>TODO</strong></p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 0.0.3-SNAPSHOT<br>
-Last updated 2020-04-11 19:47:27 UTC
+Version 0.0.4-SNAPSHOT<br>
+Last updated 2020-06-22 16:29:09 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">

@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1198px" preserveAspectRatio="none" style="width:1434px;height:1198px;" version="1.1" viewBox="0 0 1434 1198" width="1434px" zoomAndPan="magnify"><defs><style type="text/css"><![CDATA[path:hover { stroke: #ADFF2F !important;}]]></style></defs><g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="484" x="478.5" y="16.708">Agile architecture documentation - base - Components</text><!--MD5=[6c92572c3f4e2a9cd136761fda995e3d]
+cluster 10_boundary--><rect fill="#FFFFFF" height="1117" style="stroke: #444444; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" width="1391" x="14" y="36.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="83" x="668" y="51.9482">«boundary»</text><text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="42" x="688.5" y="70.1016">base</text><text fill="#444444" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="80" x="669.5" y="85.0137">[Container]</text><!--MD5=[e25884bd7fe840786d881277a14c5a0e]
+entity 11--><rect fill="#85BBF0" height="131.75" style="stroke: #78A8D8; stroke-width: 1.5;" width="328" x="668" y="95.9531"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="85" x="789.5" y="117.0918">«component»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="308" x="678" y="134.7734">ArchitectureDocumentationBuilder</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="59" x="802.5" y="149.6855">[java/CDI]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="834" y="165.5107"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="193" x="733.5" y="181.8076">Architecture documentation</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="153" x="753.5" y="198.1045">builder bootstraps the</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="804" y="214.4014">process</text><!--MD5=[2cd44814ab46f5e6a99045c6c67d7a1c]
+entity 13--><rect fill="#85BBF0" height="115.4531" style="stroke: #78A8D8; stroke-width: 1.5;" width="214" x="589" y="413.4531"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="85" x="653.5" y="434.5918">«component»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="194" x="599" y="452.2734">ArchitectureEnhancer</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="32" x="680" y="467.1855">[null]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="698" y="483.0107"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="187" x="600.5" y="499.3076">Starts all enhancers loaded</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="44" x="674" y="515.6045">by CDI</text><!--MD5=[2e47fe9ff0124b653d7be087bd1c1ac2]
+entity 12--><rect fill="#85BBF0" height="148.0469" style="stroke: #78A8D8; stroke-width: 1.5;" width="260" x="838" y="396.9531"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="85" x="925.5" y="418.0918">«component»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="240" x="848" y="435.7734">ArchitectureModelProvider</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="32" x="952" y="450.6855">[null]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="970" y="466.5107"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="197" x="869.5" y="482.8076">ArchitectureModelProvider is</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="182" x="875" y="499.1045">the interface implemented</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="166" x="883" y="515.4014">by the user Architecture</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="950.5" y="531.6982">class</text><!--MD5=[57f681a101af5b36c45b4d48786b1175]
+entity 20--><rect fill="#85BBF0" height="115.4531" style="stroke: #78A8D8; stroke-width: 1.5;" width="190" x="22" y="738.4531"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="85" x="74.5" y="759.5918">«component»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="170" x="32" y="777.2734">DocumentCollector</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="35" x="99.5" y="792.1855">[java]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="119" y="808.0107"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="149" x="40.5" y="824.3076">Collects all generated</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="79" x="77.5" y="840.6045">documents</text><!--MD5=[f23e27573c7a8d7e934deb9fe4d73a5f]
+entity 22--><rect fill="#85BBF0" height="99.1563" style="stroke: #78A8D8; stroke-width: 1.5;" width="178" x="247" y="746.4531"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="85" x="293.5" y="767.5918">«component»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="118" x="277" y="785.2734">GraphEmitter</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="35" x="318.5" y="800.1855">[java]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="338" y="816.0107"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="158" x="257" y="832.3076">Generates all diagrams</text><!--MD5=[b289b39ced8dc6d267141842d8cb9775]
+entity 14--><rect fill="#85BBF0" height="164.3438" style="stroke: #78A8D8; stroke-width: 1.5;" width="224" x="460" y="713.9531"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="85" x="529.5" y="735.0918">«component»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="204" x="470" y="752.7734">ImplicitIncludeManager</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="35" x="554.5" y="767.6855">[java]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="574" y="783.5107"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="184" x="478" y="799.8076">Includes documentation of</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="180" x="480" y="816.1045">components in generated</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="160" x="490" y="832.4014">documentation without</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="163" x="488.5" y="848.6982">having to write anything</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="82" x="531" y="864.9951">superfluous</text><!--MD5=[7c356ee5fd76ea688127ca96320d15b9]
+entity 18--><rect fill="#85BBF0" height="115.4531" style="stroke: #78A8D8; stroke-width: 1.5;" width="205" x="719.5" y="738.4531"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="85" x="779.5" y="759.5918">«component»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="166" x="739" y="777.2734">SCMLinkGenerator</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="35" x="804.5" y="792.1855">[java]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="824" y="808.0107"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="181" x="729.5" y="824.3076">Add link to SCM source for</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="112" x="766" y="840.6045">model elements</text><!--MD5=[719f049e567def7483c03ccc3af4ed75]
+entity 16--><rect fill="#85BBF0" height="131.75" style="stroke: #78A8D8; stroke-width: 1.5;" width="193" x="959.5" y="729.9531"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="85" x="1013.5" y="751.0918">«component»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="173" x="969.5" y="768.7734">SCMReadmeReader</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="35" x="1038.5" y="783.6855">[java]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="1058" y="799.5107"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="144" x="982" y="815.8076">Read model element</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="165" x="971.5" y="832.1045">readme and include it in</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="90" x="1011" y="848.4014">code section</text><!--MD5=[993620987f05eded6634f913ca64ae1b]
+entity 29--><rect fill="#85BBF0" height="99.1563" style="stroke: #78A8D8; stroke-width: 1.5;" width="209" x="1187.5" y="746.4531"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="85" x="1249.5" y="767.5918">«component»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="189" x="1197.5" y="785.2734">adr-tickets-extractor</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="35" x="1274.5" y="800.1855">[java]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="1294" y="816.0107"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="149" x="1217.5" y="832.3076">ADR Tickets Extractor</text><!--MD5=[633575d3a0ba89db5f85654fe219f5a1]
+entity 33--><rect fill="#85BBF0" height="99.1563" style="stroke: #78A8D8; stroke-width: 1.5;" width="200" x="249" y="112.4531"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="85" x="306.5" y="133.5918">«component»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="180" x="259" y="151.2734">cdi-config-extension</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="35" x="331.5" y="166.1855">[java]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="351" y="182.0107"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="152" x="273" y="198.3076">CDI Config extensions</text><!--MD5=[cbe81bb5a050b34488dc8ac73fc39a81]
+entity 27--><rect fill="#85BBF0" height="99.1563" style="stroke: #78A8D8; stroke-width: 1.5;" width="192" x="933" y="1046.9531"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="85" x="986.5" y="1068.0918">«component»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="172" x="943" y="1085.7734">github-scm-handler</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="35" x="1011.5" y="1100.6855">[java]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="1031" y="1116.5107"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="139" x="959.5" y="1132.8076">GitHub SCM Handler</text><!--MD5=[b6d0185b0422599d1d13f977d85ea789]
+entity 28--><rect fill="#85BBF0" height="99.1563" style="stroke: #78A8D8; stroke-width: 1.5;" width="184" x="1160" y="1046.9531"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="85" x="1209.5" y="1068.0918">«component»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="164" x="1170" y="1085.7734">gitlab-scm-handler</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="35" x="1234.5" y="1100.6855">[java]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="1254" y="1116.5107"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="135" x="1184.5" y="1132.8076">GitLab SCM Handler</text><!--MD5=[d02bcbcba2354bb1497a02b08e469c63]
+link 11 to 13--><path d="M793.6233,228.2611 C783.1088,247.5451 772.109,268.8379 763,288.9531 C745.4591,327.6884 728.9194,372.4979 716.6619,407.962 " fill="none" id="11-&gt;13" style="stroke: #707070; stroke-width: 3.0;"/><polygon fill="#707070" points="714.8849,413.1247,721.5962,405.9165,716.5122,408.3969,714.0317,403.3129,714.8849,413.1247" style="stroke: #707070; stroke-width: 3.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="146" x="764" y="309.52">Enhances produced</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="54" x="810" y="324.6528">reports</text><!--MD5=[0a5a2d32bb972d30673e2f26c50a7526]
+link 11 to 12--><path d="M880.4537,228.0301 C892.9159,247.0433 905.4789,268.254 915,288.9531 C929.8817,321.3065 941.6522,358.8272 950.2827,391.3659 " fill="none" id="11-&gt;12" style="stroke: #707070; stroke-width: 3.0;"/><polygon fill="#707070" points="951.6409,396.5439,953.2266,386.8236,950.3723,391.7075,945.4884,388.8533,951.6409,396.5439" style="stroke: #707070; stroke-width: 3.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="71" x="959" y="302.02">Get initial</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="89" x="950" y="317.1528">architecture</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="126" x="934" y="332.2856">desription model</text><!--MD5=[81c31b20973292284c9b99e6c687c01a]
+link 13 to 20--><path d="M588.866,482.8503 C492.0555,498.0461 349.5802,531.9008 248,605.9531 C203.0168,638.7461 168.2745,691.9084 145.907,733.6711 " fill="none" id="13-&gt;20" style="stroke: #707070; stroke-width: 3.0;"/><polygon fill="#707070" points="143.5113,738.1893,151.2614,732.1118,145.8536,733.7719,144.1935,728.3641,143.5113,738.1893" style="stroke: #707070; stroke-width: 3.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="145" x="249" y="619.02">Collects documents</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="132" x="255.5" y="634.1528">in generated final</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="60" x="294" y="649.2856">asciidoc</text><!--MD5=[e0480bbf16361d2b92950cb70d8efe0b]
+link 13 to 22--><path d="M588.8296,513.6363 C541.7595,536.0986 488.1851,567.1172 448,605.9531 C408.0994,644.5141 377.4829,700.3019 358.4253,741.4568 " fill="none" id="13-&gt;22" style="stroke: #707070; stroke-width: 3.0;"/><polygon fill="#707070" points="356.2735,746.148,363.6615,739.6352,358.3581,741.6033,356.39,736.2999,356.2735,746.148" style="stroke: #707070; stroke-width: 3.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="76" x="481.5" y="619.02">Generates</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="141" x="449" y="634.1528">diagrams of model</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="68" x="488" y="649.2856">elements</text><!--MD5=[26c085f55605f16ba30993d7cca82057]
+link 13 to 14--><path d="M659.7779,528.4975 C646.2042,551.8754 631.535,579.5576 621,605.9531 C607.9949,638.5377 597.5232,675.6558 589.6514,708.3859 " fill="none" id="13-&gt;14" style="stroke: #707070; stroke-width: 3.0;"/><polygon fill="#707070" points="588.4103,713.5999,594.3857,705.7708,589.5681,708.7358,586.6031,703.9183,588.4103,713.5999" style="stroke: #707070; stroke-width: 3.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="142" x="622.5" y="619.02">Generates incldues</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="148" x="622" y="634.1528">for the documented</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="91" x="650.5" y="649.2856">components</text><!--MD5=[4e99180173f5aeaf0358201074c66fc8]
+link 13 to 18--><path d="M734.625,528.5483 C748.9018,551.8186 764.2146,579.4117 775,605.9531 C791.6501,646.9269 803.5189,695.3505 811.1642,733.0571 " fill="none" id="13-&gt;18" style="stroke: #707070; stroke-width: 3.0;"/><polygon fill="#707070" points="812.1685,738.0695,814.3224,728.4591,811.1862,733.167,806.4783,730.0307,812.1685,738.0695" style="stroke: #707070; stroke-width: 3.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="126" x="792" y="626.52">Generates lins to</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="94" x="810.5" y="641.6528">SCM sources</text><!--MD5=[d3d446dc34180abf0e537dc58c91fbaa]
+link 13 to 16--><path d="M792.7241,528.6269 C802.2545,534.1852 811.8002,539.7039 821,544.9531 C869.893,572.8505 890.7173,567.6839 932,605.9531 C968.5024,639.791 999.1815,686.5167 1020.8923,725.1627 " fill="none" id="13-&gt;16" style="stroke: #707070; stroke-width: 3.0;"/><polygon fill="#707070" points="1023.4953,729.8341,1022.6088,720.0252,1021.0616,725.4664,1015.6204,723.9192,1023.4953,729.8341" style="stroke: #707070; stroke-width: 3.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="125" x="974" y="626.52">Fetches README</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="129" x="974.5" y="641.6528">and include them</text><!--MD5=[23bafc84f4617a64769ec1aaf7f4f0a8]
+link 13 to 29--><path d="M785.3747,528.5422 C797.0745,534.6753 809.1273,540.345 821,544.9531 C944.5964,592.9242 997.3291,541.1648 1113,605.9531 C1172.1794,639.1 1223.3458,698.4341 1255.6401,742.004 " fill="none" id="13-&gt;29" style="stroke: #707070; stroke-width: 3.0;"/><polygon fill="#707070" points="1258.7061,746.1699,1256.5929,736.5505,1255.7423,742.143,1250.1498,741.2925,1258.7061,746.1699" style="stroke: #707070; stroke-width: 3.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="105" x="1177" y="626.52">Produces ADR</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="69" x="1197.5" y="641.6528">reporting</text><!--MD5=[9d3d620217ee76a52f6bc199a04f145f]
+link 29 to 27--><path d="M1219.836,845.6642 C1186.2965,871.0421 1147.4233,903.9221 1118,938.9531 C1091.8159,970.1276 1069.3298,1010.1129 1053.51,1041.9936 " fill="none" id="29-&gt;27" style="stroke: #707070; stroke-width: 3.0;"/><polygon fill="#707070" points="1051.2247,1046.6365,1058.7881,1040.3283,1053.4328,1042.1505,1051.6106,1036.7952,1051.2247,1046.6365" style="stroke: #707070; stroke-width: 3.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="133" x="1119" y="952.02">Read tickets from</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="66" x="1152.5" y="967.1528">GitHub if</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="102" x="1137" y="982.2856">configured so</text><!--MD5=[309701a361411aafa42644d514f57bbe]
+link 29 to 28--><path d="M1285.3948,845.5746 C1278.2006,899.6212 1266.7268,985.8177 1259.2782,1041.7757 " fill="none" id="29-&gt;28" style="stroke: #707070; stroke-width: 3.0;"/><polygon fill="#707070" points="1258.615,1046.7579,1263.7678,1038.3645,1259.2749,1041.8017,1255.8377,1037.3088,1258.615,1046.7579" style="stroke: #707070; stroke-width: 3.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="133" x="1278.5" y="952.02">Read tickets from</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="144" x="1273" y="967.1528">Gitlab if configured</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="17" x="1339" y="982.2856">so</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="284" x="578.5" y="1184.9482">Agile architecture base components view</text><!--MD5=[1a548d0574271c11b2bf58db2b7cceac]
+@startuml(id=agile.architecture.base.components)
+
+
+
+
+
+skinparam defaultTextAlignment center
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam Arrow {
+    Color #666666
+    FontColor #666666
+    FontSize 12
+}
+
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor #444444
+    BorderColor #444444
+    BorderStyle dashed
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam defaultTextAlignment center
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam Arrow {
+    Color #666666
+    FontColor #666666
+    FontSize 12
+}
+
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor #444444
+    BorderColor #444444
+    BorderStyle dashed
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+
+skinparam rectangle<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+
+skinparam rectangle<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+
+skinparam rectangle<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+
+skinparam database<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+
+skinparam database<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam defaultTextAlignment center
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam Arrow {
+    Color #666666
+    FontColor #666666
+    FontSize 12
+}
+
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor #444444
+    BorderColor #444444
+    BorderStyle dashed
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+
+skinparam rectangle<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+
+skinparam rectangle<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+
+skinparam rectangle<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+
+skinparam database<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+
+skinparam database<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+
+skinparam database<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam defaultTextAlignment center
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam Arrow {
+    Color #666666
+    FontColor #666666
+    FontSize 12
+}
+
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor #444444
+    BorderColor #444444
+    BorderStyle dashed
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+
+skinparam rectangle<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+
+skinparam rectangle<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+
+skinparam rectangle<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+
+skinparam database<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+
+skinparam database<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+
+skinparam database<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<component>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #000000
+    BackgroundColor #85BBF0
+    BorderColor #78A8D8
+}
+
+skinparam database<<component>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #000000
+    BackgroundColor #85BBF0
+    BorderColor #78A8D8
+}
+
+
+
+
+
+scale max 2000x2000
+title Agile architecture documentation - base - Components
+caption Agile architecture base components view
+
+skinparam {
+  shadowing false
+  arrowColor #707070
+  actorBorderColor #707070
+  componentBorderColor #707070
+  rectangleBorderColor #707070
+  noteBackgroundColor #ffffff
+  noteBorderColor #707070
+  pathHoverColor GreenYellow
+  ArrowThickness 3
+  svgLinkTarget _parent
+}
+rectangle "==base\n<size:12>[Container]</size>" <<boundary>> as 10_boundary {
+  rectangle "==ArchitectureDocumentationBuilder\n//<size:12>[java/CDI]</size>//\n\n Architecture documentation builder bootstraps the process" <<component>> as 11
+  rectangle "==ArchitectureEnhancer\n//<size:12>[null]</size>//\n\n Starts all enhancers loaded by CDI" <<component>> as 13
+  rectangle "==ArchitectureModelProvider\n//<size:12>[null]</size>//\n\n ArchitectureModelProvider is the interface implemented by the user Architecture class" <<component>> as 12
+  rectangle "==DocumentCollector\n//<size:12>[java]</size>//\n\n Collects all generated documents" <<component>> as 20
+  rectangle "==GraphEmitter\n//<size:12>[java]</size>//\n\n Generates all diagrams" <<component>> as 22
+  rectangle "==ImplicitIncludeManager\n//<size:12>[java]</size>//\n\n Includes documentation of components in generated documentation without having to write anything superfluous" <<component>> as 14
+  rectangle "==SCMLinkGenerator\n//<size:12>[java]</size>//\n\n Add link to SCM source for model elements" <<component>> as 18
+  rectangle "==SCMReadmeReader\n//<size:12>[java]</size>//\n\n Read model element readme and include it in code section" <<component>> as 16
+  rectangle "==adr-tickets-extractor\n//<size:12>[java]</size>//\n\n ADR Tickets Extractor" <<component>> as 29
+  rectangle "==cdi-config-extension\n//<size:12>[java]</size>//\n\n CDI Config extensions" <<component>> as 33
+  rectangle "==github-scm-handler\n//<size:12>[java]</size>//\n\n GitHub SCM Handler" <<component>> as 27
+  rectangle "==gitlab-scm-handler\n//<size:12>[java]</size>//\n\n GitLab SCM Handler" <<component>> as 28
+}
+11 -DOWN-> 13 : "===Enhances produced reports"
+11 -DOWN-> 12 : "===Get initial architecture desription model"
+13 -DOWN-> 20 : "===Collects documents in generated final asciidoc"
+13 -DOWN-> 22 : "===Generates diagrams of model elements"
+13 -DOWN-> 14 : "===Generates incldues for the documented components"
+13 -DOWN-> 18 : "===Generates lins to SCM sources"
+13 -DOWN-> 16 : "===Fetches README and include them"
+13 -DOWN-> 29 : "===Produces ADR reporting"
+29 -DOWN-> 27 : "===Read tickets from GitHub if configured so"
+29 -DOWN-> 28 : "===Read tickets from Gitlab if configured so"
+@enduml
+
+PlantUML version 1.2019.12(Sun Nov 03 10:24:54 UTC 2019)
+(APACHE source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.7+10-LTS
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>example</title>
+<title>architecture-documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,80 +437,35 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article toc2 toc-left">
+<body class="book toc2 toc-left">
 <div id="header">
-<h1>example</h1>
+<h1>architecture-documentation</h1>
 <div class="details">
-<span id="revnumber">version 0.0.3-SNAPSHOT,</span>
-<span id="revdate">2020-04-11T19:47:44Z</span>
+<span id="revnumber">version 0.0.4-SNAPSHOT,</span>
+<span id="revdate">2020-06-22T16:29:21Z</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#context">1. Context</a>
-<ul class="sectlevel2">
-<li><a href="#context-diagram">1.1. Context diagram</a></li>
-<li><a href="#what-is-this-softare-system-about">1.2. What is this softare system about ?</a></li>
-<li><a href="#what-is-it-thats-being-built">1.3. What is it that&#8217;s being built?</a></li>
-<li><a href="#how-does-it-fit-into-the-existing-environment-e-g-systems-business">1.4. How does it fit into the existing environment? (e.g. systems, business</a></li>
-<li><a href="#who-is-using-it-users-roles-actors-personas-etc">1.5. Who is using it? (users, roles, actors, personas, etc)</a></li>
-</ul>
-</li>
-<li><a href="#functional-overview">2. Functional Overview</a>
-<ul class="sectlevel2">
-<li><a href="#for-a-waiting-person">2.1. For a waiting person</a></li>
-<li><a href="#for-someone-in-a-transport">2.2. For someone in a transport</a></li>
-</ul>
-</li>
-<li><a href="#quality-attributes">3. Quality Attributes</a>
-<ul class="sectlevel2">
-<li><a href="#common-constraints">3.1. Common constraints</a></li>
-<li><a href="#specifc-constraints">3.2. Specifc constraints</a>
-<ul class="sectlevel3">
-<li><a href="#ingesting-time-tables">3.2.1. Ingesting time tables</a></li>
-<li><a href="#ingestion-real-time-positions">3.2.2. Ingestion real-time positions</a></li>
-<li><a href="#seeing-train-delays">3.2.3. Seeing train delays</a></li>
-<li><a href="#informing-application-that-transport-is-running">3.2.4. Informing application that transport is running</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#constraints">4. Constraints</a>
-<ul class="sectlevel2">
-<li><a href="#common-constraints-2">4.1. Common constraints</a></li>
-</ul>
-</li>
+<li><a href="#context">1. Context</a></li>
+<li><a href="#functional-overview">2. Functional Overview</a></li>
+<li><a href="#quality-attributes">3. Quality Attributes</a></li>
+<li><a href="#constraints">4. Constraints</a></li>
 <li><a href="#principles">5. Principles</a></li>
-<li><a href="#software-architecture">6. Software Architecture</a>
-<ul class="sectlevel2">
-<li><a href="#software-architecture-of-sncfreader-component">6.1. Software architecture of sncfReader component</a></li>
-</ul>
-</li>
+<li><a href="#software-architecture">6. Software Architecture</a></li>
 <li><a href="#code">7. Code</a>
-<ul class="sectlevel2">
-<li><a href="#kafkatrain">7.1. kafkatrain</a>
 <ul class="sectlevel3">
-<li><a href="#avoir-un-train-à-lheure-cest-kafkaïen">7.1.1. Avoir un train à l&#8217;heure, c&#8217;est kafkaïen</a>
+<li><a href="#base">7.1. base</a>
 <ul class="sectlevel4">
-<li><a href="#what-does-this-repository-contains">What does this repository contains ?</a></li>
-<li><a href="#meta">Meta</a></li>
-<li><a href="#contributing">Contributing</a></li>
-</ul>
-</li>
-<li><a href="#sncf-reader">7.1.2. sncf-reader</a>
-<ul class="sectlevel4">
-<li><a href="#sncf-reader-application">sncf-reader application</a>
+<li><a href="#adr-tickets-extractor">adr-tickets-extractor</a>
 <ul class="sectlevel5">
-<li><a href="#configuration">Configuration</a></li>
+<li><a href="#adr-tickets-extractor-2">adr-tickets-extractor</a></li>
+<li><a href="#how-to-use">How to use</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#web-ui">7.1.3. web-ui</a>
-<ul class="sectlevel4">
-<li><a href="#node">node</a></li>
-</ul>
-</li>
+<li><a href="#cdi-config-extension">cdi-config-extension</a></li>
+<li><a href="#github-scm-handler">github-scm-handler</a></li>
+<li><a href="#gitlab-scm-handler">gitlab-scm-handler</a></li>
 </ul>
 </li>
 </ul>
@@ -522,30 +477,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#operation-and-support">12. Operation and Support</a></li>
 <li><a href="#decision-log">13. Decision Log</a>
 <ul class="sectlevel2">
-<li><a href="#use-adr-to-document-architecture-decisions">13.1. Use ADR to document architecture decisions</a>
-<ul class="sectlevel3">
-<li><a href="#decision">13.1.1. Decision</a></li>
-<li><a href="#status">13.1.2. Status</a></li>
-<li><a href="#context-2">13.1.3. Context</a></li>
-<li><a href="#alternatives">13.1.4. Alternatives</a>
-<ul class="sectlevel4">
-<li><a href="#use-decisions-in-asciidoc">Use decisions in Asciidoc</a>
-<ul class="sectlevel5">
-<li><a href="#pros">PROS</a></li>
-<li><a href="#cons">CONS</a></li>
-</ul>
-</li>
-<li><a href="#use-another-format">Use another format</a>
-<ul class="sectlevel5">
-<li><a href="#pros-2">PROS</a></li>
-<li><a href="#cons-2">CONS</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#consequences">13.1.5. Consequences</a></li>
-</ul>
-</li>
+<li><a href="#use-adr-to-document-architecture-decisions">13.1. Use ADR to document architecture decisions</a></li>
 </ul>
 </li>
 </ul>
@@ -563,75 +495,34 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 If you encounter any error, feel free to
-<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Context" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
+<a href="https://github.com/Riduidel/agile-architecture-documentation-system/issues/new?title=Error%20in%20architecture-documentation%20v.0.0.4-SNAPSHOT%20chapter%20Context" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
 </td>
 </tr>
 </table>
 </div>
-<div class="sect2">
-<h3 id="context-diagram"><a class="anchor" href="#context-diagram"></a>1.1. Context diagram</h3>
+<div class="paragraph">
+<p>agile-architecture-documentation-system tries to provide a solution to a rather usual, but not so well solved, problem:
+how to document architecture of a software system with the minimal effort and the maximal result.
+As a consequence, this product tries to help the architect in all possible ways.
+== Context diagram</p>
+</div>
 <div class="imageblock">
 <div class="content">
-<object type="image/svg+xml" data="./images/SystemContext.svg" width="452" height="536"><span class="alt">SystemContext</span></object>
+<object type="image/svg+xml" data="./images/SystemContext.svg" width="485" height="396"><span class="alt">SystemContext</span></object>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="what-is-this-softare-system-about"><a class="anchor" href="#what-is-this-softare-system-about"></a>1.2. What is this softare system about ?</h3>
 <div class="paragraph">
-<p>Getting "true" public transport delay is often impossible.
-Because the organism responsible for displaying delays is also the organism that allow transports to run.
-As a consequence, it is not always their best move to display effective transport delay.
-This system exists to overcome that.</p>
+<p>We identify different user profiles:</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="what-is-it-thats-being-built"><a class="anchor" href="#what-is-it-thats-being-built"></a>1.3. What is it that&#8217;s being built?</h3>
-<div class="paragraph">
-<p>We will build a system that allow us to easily compare official time table with effective transport delay by</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist">
+<ul>
 <li>
-<p>Asking users in transports to tell us if transport is late or not</p>
+<p>the architect as a scribe role, which is responsible for maintaining a correct documentation of the architecture</p>
 </li>
 <li>
-<p>Comparing effective transport location with the one provided by real-time location, when it exists</p>
+<p>the various stakeholders, be them developers, product owners, ops teams, and so on, which will refer to the produced documentation as an entrypoint.</p>
 </li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="how-does-it-fit-into-the-existing-environment-e-g-systems-business"><a class="anchor" href="#how-does-it-fit-into-the-existing-environment-e-g-systems-business"></a>1.4. How does it fit into the existing environment? (e.g. systems, business</h3>
-<div class="paragraph">
-<p>processes, etc)</p>
-</div>
-<div class="paragraph">
-<p>As we&#8217;re doing this as a startup, we have no internal context.
-However, there is an external context.</p>
-</div>
-<div class="paragraph">
-<p>We will use services of <a href="https://www.navitia.io/">navitia</a>, which provides time tables for all France cities public transport systems, but also intercity train.</p>
-</div>
-<div class="paragraph">
-<p>We will also use geolocation services provided by SNCF (for intercity trains) and other providers wher possible.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="who-is-using-it-users-roles-actors-personas-etc"><a class="anchor" href="#who-is-using-it-users-roles-actors-personas-etc"></a>1.5. Who is using it? (users, roles, actors, personas, etc)</h3>
-<div class="paragraph">
-<p>We currently envision two types of useers (who can in fact be the same person at different times)</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The waiting user, to which we will send accurate crossing schedule information.</p>
-</li>
-<li>
-<p>The user already in transport, which can inform waiting user if the train was on time or not</p>
-</li>
-</ol>
-</div>
+</ul>
 </div>
 </div>
 </div>
@@ -646,49 +537,26 @@ However, there is an external context.</p>
 </td>
 <td class="content">
 If you encounter any error, feel free to
-<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Functional%20Overview" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
+<a href="https://github.com/Riduidel/agile-architecture-documentation-system/issues/new?title=Error%20in%20architecture-documentation%20v.0.0.4-SNAPSHOT%20chapter%20Functional%20Overview" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>This system allows a person waiting for a public transport to have informations on transport schedule, as provided by people upstream in the same public transport.
-Imagine that as a crowdsourced SMS from a friend.</p>
+<p>This software helps the architect writing a coherent, complete and readable software architecture documentation.
+Usage of this software is quite simple (for a developer).</p>
 </div>
 <div class="paragraph">
-<p>Features are quite simple.</p>
+<p>The first step is to initiate a documentation (which is documented in <a href="https://github.com/Riduidel/agile-architecture-documentation-system#install">README.md</a>).</p>
 </div>
-<div class="sect2">
-<h3 id="for-a-waiting-person"><a class="anchor" href="#for-a-waiting-person"></a>2.1. For a waiting person</h3>
 <div class="paragraph">
-<p>When someone waits for a transport, kafkatrain detects (from user location and timetables) which are the possible transports the person wants to go in.
-If multiple transports matches, the application allows user to select which transport he is waiting for.
-Once a transport has been selected, information from upstream users is presented.
-This information will typically take the form of</p>
+<p>Then, architect has to write content in all <code>.adoc</code> files generated in <code>src/docs/asciidoc</code>.
+Notice writing those files will be eased out by using the <code>Architecture</code> java class to generate diagrams,
+and the enhancers this project provides.</p>
 </div>
-<div class="quoteblock">
-<blockquote>
-At stop "name of stop", transport was "on time|late by n minutes"
-</blockquote>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-As of today, we don&#8217;t envision the UI of application
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="for-someone-in-a-transport"><a class="anchor" href="#for-someone-in-a-transport"></a>2.2. For someone in a transport</h3>
 <div class="paragraph">
-<p>Once the user is in the public transport, and the transport is moving, application simply sends a message notifying the system that transport is on way.</p>
-</div>
+<p>The enhancers allows architect to have content added to this documentation without having to write it himself.
+Typically, we&#8217;re able to include README documents, architecture decisions, and more to come later &#8230;&#8203; (well, provided the users ask for additionnal includes)</p>
 </div>
 </div>
 </div>
@@ -703,121 +571,19 @@ As of today, we don&#8217;t envision the UI of application
 </td>
 <td class="content">
 If you encounter any error, feel free to
-<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Quality%20Attributes" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
+<a href="https://github.com/Riduidel/agile-architecture-documentation-system/issues/new?title=Error%20in%20architecture-documentation%20v.0.0.4-SNAPSHOT%20chapter%20Quality%20Attributes" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
 </td>
 </tr>
 </table>
 </div>
-<div class="sect2">
-<h3 id="common-constraints"><a class="anchor" href="#common-constraints"></a>3.1. Common constraints</h3>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Performance (e.g. latency and throughput)</dt>
-<dd>
-<p>All users should have application available in 5 seconds.</p>
-</dd>
-<dt class="hdlist1">Scalability (e.g. data and traffic volumes)</dt>
-<dd>
-<p>We expect a first deployment with 1.000 users (and 100 simultaneous connections of users)</p>
-</dd>
-<dt class="hdlist1">Availability (e.g. uptime, downtime, scheduled maintenance, 24x7,99.9%, etc)</dt>
-<dd>
-<p>Application will initially be available on a <a href="https://uptime.is/99.9">99.9% basis</a></p>
-</dd>
-<dt class="hdlist1">Security (e.g. authentication, authorisation, data confidentiality, etc)</dt>
-<dd>
-<p>No user data should be stored by system.
-Authentication and authorization will be managed using OpenID Connect with the usual id providers (Google, Facebook, &#8230;&#8203;)</p>
-</dd>
-<dt class="hdlist1">Extensibility</dt>
-<dd>
-<p>Application will be extended to various geographic areas and types of public transport systems (buses, trains, boats), but there will be no feature extensibility</p>
-</dd>
-<dt class="hdlist1">Flexibility</dt>
-<dd>
-<p>Application is not supposed to be flexible</p>
-</dd>
-<dt class="hdlist1">Auditing</dt>
-<dd>
-<p>We must be able to audit the timetables provided by Navitia as well as the real-time positions.
-We must also be able to audit what informations users in transit send
-to blacklist the ones that will (because shit happens) try to abuse the system.</p>
-</dd>
-<dt class="hdlist1">Monitoring and management</dt>
-<dd>
-<p>Usual system monitoring will be used.</p>
-</dd>
-<dt class="hdlist1">Reliability</dt>
-<dd>
-<p>Besides, we will monitor the number of users in transit and waiting and the delay between the time when one user starts his transit and another, on the same line, receive the delay information.</p>
-</dd>
-<dt class="hdlist1">Failover/disaster recovery targets (e.g. manual vs automatic, how long will this take?)</dt>
-<dd>
-<p>We should be able to recover data center loss in less than one day.</p>
-</dd>
-<dt class="hdlist1">Business continuity</dt>
-<dd>
-<p>N/A</p>
-</dd>
-<dt class="hdlist1">Interoperability</dt>
-<dd>
-<p>N/A</p>
-</dd>
-<dt class="hdlist1">Legal, compliance and regulatory requirements (e.g. data protection act)</dt>
-<dd>
-<p>N/A</p>
-</dd>
-<dt class="hdlist1">Internationalisation (i18n) and localisation (L10n)</dt>
-<dd>
-<p>Application will be deployed in all countries where public transport systems provide APIs (and have potential delays).
-For the sake of easiness, application will be first deployed in France.</p>
-</dd>
-<dt class="hdlist1">Accessibility</dt>
-<dd>
-<p>Don&#8217;t know how to validate that.</p>
-</dd>
-<dt class="hdlist1">Usability</dt>
-<dd>
-<p>Don&#8217;t know how to validate that.</p>
-</dd>
-</dl>
-</div>
-</div>
-<div class="sect2">
-<h3 id="specifc-constraints"><a class="anchor" href="#specifc-constraints"></a>3.2. Specifc constraints</h3>
 <div class="paragraph">
-<p>These constraints maps to the relationships expressed in <a href="#context">Context</a></p>
-</div>
-<div class="sect3">
-<h4 id="ingesting-time-tables"><a class="anchor" href="#ingesting-time-tables"></a>3.2.1. Ingesting time tables</h4>
-<div class="paragraph">
-<p>Ingesting time tables from Navitia should be done each day.
-The process should be monitored since there should be no day where this data is not ingested.
-THis ingestion should be done prior the first release (application has no interest without that).</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="ingestion-real-time-positions"><a class="anchor" href="#ingestion-real-time-positions"></a>3.2.2. Ingestion real-time positions</h4>
-<div class="paragraph">
-<p>This should be done in a continuous stream.
-Ingestion should not have delay greater than one minute.
-Application should be able to work without this information.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="seeing-train-delays"><a class="anchor" href="#seeing-train-delays"></a>3.2.3. Seeing train delays</h4>
-<div class="paragraph">
-<p>Delays should be communicated to user in less than 1 s.
-If user connection to system dont allow that, delays will be sent to user with a notification indicating that network is not performant enough to have accurate timetables.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="informing-application-that-transport-is-running"><a class="anchor" href="#informing-application-that-transport-is-running"></a>3.2.4. Informing application that transport is running</h4>
-<div class="paragraph">
-<p>A transport is considered as moving after 5 seconds of continuous move.
-After this delay, signal should be sent in less than 1 s.</p>
-</div>
-</div>
+<p>The documentation build should be fast enough to allow architect to write its documentation
+and have it reloaded in "human real time".
+In other words, we expect
+a simple documentation to generate in less than 10 seconds
+and
+a complex documentation (involving reading configuration from remote systems and so on) to generate in less than 1 minute.
+<strong>TODO</strong></p>
 </div>
 </div>
 </div>
@@ -832,71 +598,13 @@ After this delay, signal should be sent in less than 1 s.</p>
 </td>
 <td class="content">
 If you encounter any error, feel free to
-<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Constraints" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
+<a href="https://github.com/Riduidel/agile-architecture-documentation-system/issues/new?title=Error%20in%20architecture-documentation%20v.0.0.4-SNAPSHOT%20chapter%20Constraints" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
 </td>
 </tr>
 </table>
 </div>
-<div class="sect2">
-<h3 id="common-constraints-2"><a class="anchor" href="#common-constraints-2"></a>4.1. Common constraints</h3>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Time, budget and resources</dt>
-<dd>
-<p>Project will be built by Nicolas Delsaux and Logan Hauspie.
-Budget is zero, as it is an example.
-Application is expected to be delivered &#8230;&#8203; one day</p>
-</dd>
-<dt class="hdlist1">Approved technology lists and technology constraints</dt>
-<dd>
-<p>Server-side components of application will be depolyed as containers.</p>
-</dd>
-<dt class="hdlist1">Target deployment platform</dt>
-<dd>
-<p>Application will be deployed on Google Kubernetes Cluster.</p>
-</dd>
-<dt class="hdlist1">Existing systems and integration standards</dt>
-<dd>
-<p>TODO</p>
-</dd>
-<dt class="hdlist1">Local standards (e.g. development, coding, etc)</dt>
-<dd>
-<p>TODO</p>
-</dd>
-<dt class="hdlist1">Public standards (e.g. HTTP, SOAP, XML, XML Schema, WSDL, etc)</dt>
-<dd>
-<p>TODO</p>
-</dd>
-<dt class="hdlist1">Standard protocols</dt>
-<dd>
-<p>TODO</p>
-</dd>
-<dt class="hdlist1">Standard message formats</dt>
-<dd>
-<p>TODO</p>
-</dd>
-<dt class="hdlist1">Size of the software development team</dt>
-<dd>
-<p>Two persons at best</p>
-</dd>
-<dt class="hdlist1">Skill profile of the software development team</dt>
-<dd>
-<p>Developers are skilled on server-side, less on front-end.</p>
-</dd>
-<dt class="hdlist1">Nature of the software being built (e.g. tactical or strategic)</dt>
-<dd>
-<p>Strategic, as it is the only product of our startup.</p>
-</dd>
-<dt class="hdlist1">Political constraints</dt>
-<dd>
-<p>TODO</p>
-</dd>
-<dt class="hdlist1">Use of internal intellectual property</dt>
-<dd>
-<p>TODO</p>
-</dd>
-</dl>
-</div>
+<div class="paragraph">
+<p><strong>TODO</strong></p>
 </div>
 </div>
 </div>
@@ -911,37 +619,18 @@ Application is expected to be delivered &#8230;&#8203; one day</p>
 </td>
 <td class="content">
 If you encounter any error, feel free to
-<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Principles" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
+<a href="https://github.com/Riduidel/agile-architecture-documentation-system/issues/new?title=Error%20in%20architecture-documentation%20v.0.0.4-SNAPSHOT%20chapter%20Principles" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>Team will adhere to the following set of principles.</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p>As it is an example project, we follow the <a href="http://programming-motherfucker.com/">programming, motherfucker</a> methodology.</p>
+<p>Architecture model must be totally described in the Architecture class.</p>
 </li>
 <li>
-<p>There should be no operationnal management cost, so</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Application should be auto-redeployed</p>
-</li>
-<li>
-<p>Application should be self-healing</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Application should use messaging and async systems as much as possible</p>
-</li>
-<li>
-<p>Interfaces between components should be documented</p>
+<p>Additional architecture information (typically, location of README files for components) has to be set has properties in the various Structurizr <code>Element</code> subclasses (<code>SoftwareSystem</code>, <code>Container</code>, <code>Component</code>)</p>
 </li>
 </ul>
 </div>
@@ -958,30 +647,23 @@ If you encounter any error, feel free to
 </td>
 <td class="content">
 If you encounter any error, feel free to
-<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Software%20Architecture" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
+<a href="https://github.com/Riduidel/agile-architecture-documentation-system/issues/new?title=Error%20in%20architecture-documentation%20v.0.0.4-SNAPSHOT%20chapter%20Software%20Architecture" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
 </td>
 </tr>
 </table>
 </div>
 <div class="imageblock">
 <div class="content">
-<object type="image/svg+xml" data="./images/kafkatrain.containers.svg" width="1375" height="773"><span class="alt">kafkatrain.containers</span></object>
+<object type="image/svg+xml" data="./images/agile.architecture.containers.svg" width="604" height="726"><span class="alt">agile.architecture.containers</span></object>
 </div>
 </div>
-<div class="paragraph">
-<p>We use Kafka to fully isolate load between sncfReader and storage.
-We use ElasticSearch to provide various search directions, as we will request search based on geographic criterais as well as proximity.</p>
-</div>
-<div class="sect2">
-<h3 id="software-architecture-of-sncfreader-component"><a class="anchor" href="#software-architecture-of-sncfreader-component"></a>6.1. Software architecture of sncfReader component</h3>
 <div class="imageblock">
 <div class="content">
-<object type="image/svg+xml" data="./images/sncfReader.components.svg" width="1613" height="263"><span class="alt">sncfReader.components</span></object>
+<object type="image/svg+xml" data="./images/agile.architecture.base.components.svg" width="1434" height="1198"><span class="alt">agile.architecture.base.components</span></object>
 </div>
 </div>
 <div class="paragraph">
-<p>This one is quite simple : one verticle reads data from Navitia HTTP endpoint, send the obtained data through Vert.x event bus to another which outpus data to a Kafka stream.</p>
-</div>
+<p><strong>TODO</strong></p>
 </div>
 </div>
 </div>
@@ -996,7 +678,7 @@ We use ElasticSearch to provide various search directions, as we will request se
 </td>
 <td class="content">
 If you encounter any error, feel free to
-<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Code" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
+<a href="https://github.com/Riduidel/agile-architecture-documentation-system/issues/new?title=Error%20in%20architecture-documentation%20v.0.0.4-SNAPSHOT%20chapter%20Code" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
 </td>
 </tr>
 </table>
@@ -1004,139 +686,108 @@ If you encounter any error, feel free to
 <div class="paragraph">
 <p><strong>TODO</strong></p>
 </div>
-<div class="sect2">
-<h3 id="kafkatrain"><a class="anchor" href="#kafkatrain"></a>7.1. kafkatrain</h3>
-<div class="paragraph">
-<p><a href="https://github.com/Riduidel/snowcamp-2019/blob/master/">See on <span class="icon"><i class="fa fa-github"></i></span> GitHub</a></p>
-</div>
 <div class="sect3">
-<h4 id="avoir-un-train-à-lheure-cest-kafkaïen"><a class="anchor" href="#avoir-un-train-à-lheure-cest-kafkaïen"></a>7.1.1. Avoir un train à l&#8217;heure, c&#8217;est kafkaïen</h4>
-<div class="quoteblock">
-<blockquote>
+<h4 id="base"><a class="anchor" href="#base"></a>7.1. base</h4>
 <div class="paragraph">
-<p>Repository principal de notre présentation à Snowcamp 2019</p>
+<p><a href="https://github.com/Riduidel/agile-architecture-documentation-system//blob/master/base">See on <span class="icon"><i class="fa fa-github"></i></span> GitHub</a></p>
 </div>
-</blockquote>
-</div>
-<div class="sect4">
-<h5 id="what-does-this-repository-contains"><a class="anchor" href="#what-does-this-repository-contains"></a>What does this repository contains ?</h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>src/build</code> contains various build scripts</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>0-install.sh</code> installs the environment, provided the secrets are known</p>
-</li>
-<li>
-<p><code>1-write-reader-code.bat</code> copies reader code in its own repository</p>
-</li>
-<li>
-<p><code>2-write-web-ui.bat</code> copies web ui in its own repository</p>
-</li>
-<li>
-<p><code>delete.bat</code> deletes the cluster, and the various generated projects</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>src/k8s</code> contains all deployed into k8s cluster</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>elastic</code> provides ingresses for Kibana and Elasticsearch (<strong>DON&#8217;T DO THAT IN PROD</strong>)</p>
-</li>
-<li>
-<p><code>kafka</code> installs all additionnal applications for kafka</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="meta"><a class="anchor" href="#meta"></a>Meta</h5>
-<div class="ulist">
-<ul>
-<li>
-<p>Logan Hauspie – <a href="https://twitter.com/lhauspie">@lhauspie</a></p>
-</li>
-<li>
-<p>Nicolas Delsaux – <a href="https://twitter.com/Riduidel">@Riduidel</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="contributing"><a class="anchor" href="#contributing"></a>Contributing</h5>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Fork it (&lt;<a href="https://github.com/Riduidel/snowcamp-2019/fork&gt;" class="bare">https://github.com/Riduidel/snowcamp-2019/fork&gt;</a>)</p>
-</li>
-<li>
-<p>Create your feature branch (<code>git checkout -b feature/fooBar</code>)</p>
-</li>
-<li>
-<p>Commit your changes (<code>git commit -am 'Add some fooBar'</code>)</p>
-</li>
-<li>
-<p>Push to the branch (<code>git push origin feature/fooBar</code>)</p>
-</li>
-<li>
-<p>Create a new Pull Request</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="sncf-reader"><a class="anchor" href="#sncf-reader"></a>7.1.2. sncf-reader</h4>
 <div class="paragraph">
-<p><a href="https://github.com/Riduidel/snowcamp-2019/blob/master/src/build/reference/sncf-reader">See on <span class="icon"><i class="fa fa-github"></i></span> GitHub</a></p>
+<p>Agile architecture documentation base is the workhorse of this architecture tooling.</p>
+</div>
+<div class="paragraph">
+<p>It bootstraps a CDI context and use it to inject the architecture model, as written by the user,
+then decorates this model using enhancers (that are free to do any meaningful operation)
+before to finally write diagrams and asciidoc documents in output folder.</p>
 </div>
 <div class="sect4">
-<h5 id="sncf-reader-application"><a class="anchor" href="#sncf-reader-application"></a>sncf-reader application</h5>
+<h5 id="adr-tickets-extractor"><a class="anchor" href="#adr-tickets-extractor"></a>adr-tickets-extractor</h5>
 <div class="paragraph">
-<p>This application allows us to inject SNCF timesheets into our Kafka engine, for later processing.</p>
+<p><a href="https://github.com/Riduidel/agile-architecture-documentation-system//blob/master/adr-tickets-extractor">See on <span class="icon"><i class="fa fa-github"></i></span> GitHub</a></p>
 </div>
 <div class="sect5">
-<h6 id="configuration"><a class="anchor" href="#configuration"></a>Configuration</h6>
+<h6 id="adr-tickets-extractor-2"><a class="anchor" href="#adr-tickets-extractor-2"></a>adr-tickets-extractor</h6>
 <div class="paragraph">
-<p>This application requires the following environment variables to be set</p>
+<p>This module provides tooling for extracting architecture decisions from an issue tracker configured for each requiring structurizr element.</p>
+</div>
+<div class="paragraph">
+<p>The rationale is that decisions are in fact team discussion, which are poorly captured in static text documents.
+As a consequence, it is way more efficient to use issue trackers
+(which precise role is to track discussions about software evolution)
+and have the issue tracker content emitted as documentation.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="how-to-use"><a class="anchor" href="#how-to-use"></a>How to use</h6>
+<div class="paragraph">
+<p>This is exposed in [agile architecture documentation example](<a href="https://github.com/Riduidel/agile-architecture-documentation-example/" class="bare">https://github.com/Riduidel/agile-architecture-documentation-example/</a>).</p>
+</div>
+<div class="paragraph">
+<p>This obviously requires a valid SCM handler.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>SNCF_READER_TOKEN</code> access token for Navitia API</p>
+<p>Add the dependency to your POM:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">		&lt;dependency&gt;
+			&lt;groupId&gt;com.github.Riduidel.agile-architecture-documentation-system&lt;/groupId&gt;
+			&lt;artifactId&gt;adr-tickets-extractor&lt;/artifactId&gt;
+			&lt;version&gt;${version.agile-architecture}&lt;/version&gt;
+		&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add the property to the model element supposed to contain architecture decision records. Typically, it will be your <code>SoftwareSystem</code>.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">		SoftwareSystem kafkatrain = model.addSoftwareSystem("kafkatrain", "Crowd-sourced transport timetable prediction system");
+		kafkatrain.addProperty(ADRExtractor.AGILE_ARCHITECTURE_TICKETS_PROJECT, "https://github.com/Riduidel/agile-architecture-documentation-example/");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And that&#8217;s all! the auto-include feature of agile-architecture-documentation-system will make sure the tickets are included, so the only thing you have to do is to go into the decision-log section to add a decision indicating your desire to switch to decisions stored in an issue tracker.</p>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="cdi-config-extension"><a class="anchor" href="#cdi-config-extension"></a>cdi-config-extension</h5>
+<div class="paragraph">
+<p><a href="https://github.com/Riduidel/agile-architecture-documentation-system//blob/master/cdi-config-extension">See on <span class="icon"><i class="fa fa-github"></i></span> GitHub</a></p>
+</div>
+<div class="paragraph">
+<p>This component contains some CDI extension.
+Typically, there is</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>LogProducer</code>, very useful to have loggers injected with the right name by simply writing <code>@Inject Logger logger;</code></p>
 </li>
 <li>
-<p><code>SNCF_READER_READ_AT_STARTUP</code> When set to true, immediatly start reading SNCF timesheet</p>
-</li>
-<li>
-<p><code>SNCF_READER_KAFKA_BOOTSTRAP_SERVER</code> url of Kafka server to connect to</p>
-</li>
-<li>
-<p><code>SNCF_READER_TOPIC_SCHEDULE</code> Topic where to post schedule. Defaults to <code>sncfReaderSchedule</code></p>
+<p><code>FileConfigPropertyProducer</code>, which allows injection of File path from configuration.</p>
 </li>
 </ul>
 </div>
 </div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="web-ui"><a class="anchor" href="#web-ui"></a>7.1.3. web-ui</h4>
+<div class="sect4">
+<h5 id="github-scm-handler"><a class="anchor" href="#github-scm-handler"></a>github-scm-handler</h5>
 <div class="paragraph">
-<p><a href="https://github.com/Riduidel/snowcamp-2019/blob/master/src/build/reference/web-ui">See on <span class="icon"><i class="fa fa-github"></i></span> GitHub</a></p>
+<p><a href="https://github.com/Riduidel/agile-architecture-documentation-system//blob/master/github-scm-handler">See on <span class="icon"><i class="fa fa-github"></i></span> GitHub</a></p>
+</div>
 </div>
 <div class="sect4">
-<h5 id="node"><a class="anchor" href="#node"></a>node</h5>
+<h5 id="gitlab-scm-handler"><a class="anchor" href="#gitlab-scm-handler"></a>gitlab-scm-handler</h5>
 <div class="paragraph">
-<p>Simple Hello World that listens on localhost:8080</p>
-</div>
+<p><a href="https://github.com/Riduidel/agile-architecture-documentation-system//blob/master/gitlab-scm-handler">See on <span class="icon"><i class="fa fa-github"></i></span> GitHub</a></p>
 </div>
 </div>
 </div>
@@ -1153,7 +804,7 @@ If you encounter any error, feel free to
 </td>
 <td class="content">
 If you encounter any error, feel free to
-<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Data" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
+<a href="https://github.com/Riduidel/agile-architecture-documentation-system/issues/new?title=Error%20in%20architecture-documentation%20v.0.0.4-SNAPSHOT%20chapter%20Data" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
 </td>
 </tr>
 </table>
@@ -1174,7 +825,7 @@ If you encounter any error, feel free to
 </td>
 <td class="content">
 If you encounter any error, feel free to
-<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Infrastructure%20Architecture" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
+<a href="https://github.com/Riduidel/agile-architecture-documentation-system/issues/new?title=Error%20in%20architecture-documentation%20v.0.0.4-SNAPSHOT%20chapter%20Infrastructure%20Architecture" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
 </td>
 </tr>
 </table>
@@ -1195,7 +846,7 @@ If you encounter any error, feel free to
 </td>
 <td class="content">
 If you encounter any error, feel free to
-<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Deployment" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
+<a href="https://github.com/Riduidel/agile-architecture-documentation-system/issues/new?title=Error%20in%20architecture-documentation%20v.0.0.4-SNAPSHOT%20chapter%20Deployment" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
 </td>
 </tr>
 </table>
@@ -1216,7 +867,7 @@ If you encounter any error, feel free to
 </td>
 <td class="content">
 If you encounter any error, feel free to
-<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Development%20Environment" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
+<a href="https://github.com/Riduidel/agile-architecture-documentation-system/issues/new?title=Error%20in%20architecture-documentation%20v.0.0.4-SNAPSHOT%20chapter%20Development%20Environment" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
 </td>
 </tr>
 </table>
@@ -1237,7 +888,7 @@ If you encounter any error, feel free to
 </td>
 <td class="content">
 If you encounter any error, feel free to
-<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Operation%20and%20Support" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
+<a href="https://github.com/Riduidel/agile-architecture-documentation-system/issues/new?title=Error%20in%20architecture-documentation%20v.0.0.4-SNAPSHOT%20chapter%20Operation%20and%20Support" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
 </td>
 </tr>
 </table>
@@ -1258,7 +909,7 @@ If you encounter any error, feel free to
 </td>
 <td class="content">
 If you encounter any error, feel free to
-<a href="https://github.com/Riduidel/agile-architecture-documentation-archetype/issues/new?title=Error%20in%20example%20v.0.0.3-SNAPSHOT%20chapter%20Decision%20Log" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
+<a href="https://github.com/Riduidel/agile-architecture-documentation-system/issues/new?title=Error%20in%20architecture-documentation%20v.0.0.4-SNAPSHOT%20chapter%20Decision%20Log" target="feedback"><span class="icon"><i class="fa fa-github"></i></span> enter an issue on GitHub</a>.
 </td>
 </tr>
 </table>
@@ -1268,20 +919,12 @@ If you encounter any error, feel free to
 <div class="paragraph">
 <p>Date: 2020-01-14</p>
 </div>
-<div class="sect3">
-<h4 id="decision"><a class="anchor" href="#decision"></a>13.1.1. Decision</h4>
 <div class="paragraph">
 <p>We will store decisions as asciidoc documents in <code>src/docs/asciidoc/decisions</code>.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="status"><a class="anchor" href="#status"></a>13.1.2. Status</h4>
 <div class="paragraph">
 <p><strong>Accepted</strong></p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="context-2"><a class="anchor" href="#context-2"></a>13.1.3. Context</h4>
 <div class="paragraph">
 <p>The purpose of this section is to simply record the major decisions that
 have been made, including both the technology choices (e.g. products,
@@ -1311,16 +954,6 @@ attributes?</p>
 </li>
 <li>
 <p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="alternatives"><a class="anchor" href="#alternatives"></a>13.1.4. Alternatives</h4>
-<div class="sect4">
-<h5 id="use-decisions-in-asciidoc"><a class="anchor" href="#use-decisions-in-asciidoc"></a>Use decisions in Asciidoc</h5>
-<div class="sect5">
-<h6 id="pros"><a class="anchor" href="#pros"></a>PROS</h6>
 <div class="ulist">
 <ul>
 <li>
@@ -1329,39 +962,15 @@ attributes?</p>
 <li>
 <p>Rendering will be optimal</p>
 </li>
-</ul>
-</div>
-</div>
-<div class="sect5">
-<h6 id="cons"><a class="anchor" href="#cons"></a>CONS</h6>
-<div class="ulist">
-<ul>
 <li>
 <p>Decisions will be burried deep inside Asciidoc hiearchy</p>
 </li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="use-another-format"><a class="anchor" href="#use-another-format"></a>Use another format</h5>
-<div class="sect5">
-<h6 id="pros-2"><a class="anchor" href="#pros-2"></a>PROS</h6>
-<div class="ulist">
-<ul>
 <li>
 <p>Decisions can be put in a specific folder</p>
 </li>
 <li>
 <p>We can use "tooling" to access those decisions</p>
 </li>
-</ul>
-</div>
-</div>
-<div class="sect5">
-<h6 id="cons-2"><a class="anchor" href="#cons-2"></a>CONS</h6>
-<div class="ulist">
-<ul>
 <li>
 <p>Decisions will be isolate from architecture documentation</p>
 </li>
@@ -1370,11 +979,9 @@ attributes?</p>
 </li>
 </ul>
 </div>
+</li>
+</ul>
 </div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="consequences"><a class="anchor" href="#consequences"></a>13.1.5. Consequences</h4>
 <div class="paragraph">
 <p>Integrating decisions in Asciidoc requires changing a section of architecture.</p>
 </div>
@@ -1382,11 +989,10 @@ attributes?</p>
 </div>
 </div>
 </div>
-</div>
 <div id="footer">
 <div id="footer-text">
-Version 0.0.3-SNAPSHOT<br>
-Last updated 2020-04-11 19:47:27 UTC
+Version 0.0.4-SNAPSHOT<br>
+Last updated 2020-06-22 16:29:09 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
