@@ -442,7 +442,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>Code</h1>
 <div class="details">
 <span id="revnumber">version 0.0.4-SNAPSHOT,</span>
-<span id="revdate">2020-06-22T18:25:26Z</span>
+<span id="revdate">2020-06-24T15:07:30Z</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -467,9 +467,6 @@ If you encounter any error, feel free to
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p><strong>TODO</strong></p>
-</div>
 </div>
 </div>
 <div class="sect2">
@@ -477,6 +474,8 @@ If you encounter any error, feel free to
 <div class="paragraph">
 <p><a href="https://github.com/Riduidel/agile-architecture-documentation-system//blob/master/base">See on <span class="icon"><i class="fa fa-github"></i></span> GitHub</a></p>
 </div>
+<div class="sect3">
+<h4 id="agile-architecture-documentation-base"><a class="anchor" href="#agile-architecture-documentation-base"></a>1.1. Agile architecture documentation base</h4>
 <div class="paragraph">
 <p>Agile architecture documentation base is the workhorse of this architecture tooling.</p>
 </div>
@@ -485,8 +484,160 @@ If you encounter any error, feel free to
 then decorates this model using enhancers (that are free to do any meaningful operation)
 before to finally write diagrams and asciidoc documents in output folder.</p>
 </div>
+<div class="paragraph">
+<p>Various components are available to enhance generated documentation.</p>
+</div>
+<div class="sect4">
+<h5 id="configuration"><a class="anchor" href="#configuration"></a>Configuration</h5>
+<div class="paragraph">
+<p>There are two types of configuration available for this project.</p>
+</div>
+<div class="sect5">
+<h6 id="system-properties"><a class="anchor" href="#system-properties"></a>System properties</h6>
+<div class="paragraph">
+<p>Global configuration is set via system property given on command-line (see in pom for examples).
+Typical examples are the <code>force</code> flag, or output folder.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="model-element-properties"><a class="anchor" href="#model-element-properties"></a>Model element properties</h6>
+<div class="paragraph">
+<p>Each structurizr model element can receive additionnal properties in Java code, through calls to <code>Element#addProperty(key, value)</code>.
+This configuration mode is to be used for each element requiring specific configuration (typically, SCM address is configured this way).</p>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="architectureenhancer"><a class="anchor" href="#architectureenhancer"></a>ArchitectureEnhancer</h5>
+<div class="paragraph">
+<p>This class will run all model and views enhancers, and is used to defined the folder in which data is stored.
+This storage folder (referenced in this document as <code>${ENHANCEMENTS_DIR}</code>) is configured by the <code>agile.architecture.enhancements</code> which uses DeltaSpike configuration loading mechanism and has no default value in code, but one is set in pom generated from archetype (value is <code>${agile.architecture.output.enhancements}</code> maven property, which resolves to <code>target/structurizr/enhancements</code>).</p>
+</div>
+<div class="paragraph">
+<p>When available, all components configuration properties are mentionned in this document.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="organisation-of-storage-in-enhancements_dir"><a class="anchor" href="#organisation-of-storage-in-enhancements_dir"></a>Organisation of storage in <code>${ENHANCEMENTS_DIR}</code></h5>
+<div class="paragraph">
+<p>TO have things reasonably sorted, we generate the following structure in <code>${ENHANCEMENTS_DIR}</code> depending upon three elements</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The structurizr model element for which the file is generated</p>
+</li>
+<li>
+<p>The enhancer priority and name</p>
+</li>
+<li>
+<p>A file identifier suffix, eventually containing the file type, but potentially having more content in)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This organization is enforced by the OutputBuidler interface in this module, which only implementation is <code>ArchitectureEnhancer</code>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="enhancers"><a class="anchor" href="#enhancers"></a>Enhancers</h5>
+<div class="paragraph">
+<p>Then come the turn of the various enhancers, which will add various elements.
+They&#8217;re described here in the order defined by the `Enhancer#priority()| method.</p>
+</div>
+<div class="sect5">
+<h6 id="implicitincludemanager"><a class="anchor" href="#implicitincludemanager"></a>ImplicitIncludeManager</h6>
+<div class="paragraph">
+<p>This folder will look for files defined in each section associated content folder.
+THis content folder is defined by concatenating <code>asciidoc.source.dir</code> configuration property (which resolves to <code>src/docs/asciidoc</code>) and the section folder name (which is <code>${section_number}_${section_name}</code>, exactly like file names).
+For each folder having content, a file will be generated in <code>${ENHANCEMENTS_DIR}</code> that will include content to have it in final doc without having to write any include.</p>
+</div>
+<div class="paragraph">
+<p>This enhancer is set as first, to make sure the content written in documentation is always displayed before any kind of automated report.</p>
+</div>
+<div class="paragraph">
+<p>This behaviour cannot be deactivated.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="scmlinkgenerator"><a class="anchor" href="#scmlinkgenerator"></a>SCMLinkGenerator</h6>
+<div class="paragraph">
+<p>This component will generate a link to the SCM repository containing the structurizr element code. It make use of any implementation of <code>SCMHandler</code> that is present in CLASSPATH to load the file.</p>
+</div>
+<div class="sect6">
+<h7 id="configuration-2"><a class="anchor" href="#configuration-2"></a>Configuration</h7>
+<div class="sect7">
+<h8 id="system-properties-2"><a class="anchor" href="#system-properties-2"></a>System properties</h8>
+<div class="paragraph">
+<p>The component can be forced to rewrite the generated file by the common <code>force</code> flag.</p>
+</div>
+</div>
+<div class="sect7">
+<h8 id="model-element-configuration"><a class="anchor" href="#model-element-configuration"></a>Model element configuration</h8>
+<div class="paragraph">
+<p>This component is activated only for model element having a value for the <code>agile.architecture.scm.project</code> property.
+Additionnally, path to element in repository can be configured with the <code>agile.architecture.scm.path</code> property, also to define in Architure class.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="scmreadmereader"><a class="anchor" href="#scmreadmereader"></a>SCMReadmeReader</h6>
+<div class="paragraph">
+<p>This component will include the Readme of any model element for which the <code>agile.architecture.scm.project</code> property is defined.</p>
+</div>
+<div class="paragraph">
+<p>If readme is a markdown file, it will be converted to asciidoc before to be included.</p>
+</div>
+<div class="paragraph">
+<p>Notice that links will not be rewritten, so avoid relative links.</p>
+</div>
+<div class="sect6">
+<h7 id="configuration-3"><a class="anchor" href="#configuration-3"></a>Configuration</h7>
+<div class="sect7">
+<h8 id="system-properties-3"><a class="anchor" href="#system-properties-3"></a>System properties</h8>
+<div class="paragraph">
+<p>The component can be forced to rewrite the generated file by the common <code>force</code> flag.</p>
+</div>
+</div>
+<div class="sect7">
+<h8 id="model-element-configuration-2"><a class="anchor" href="#model-element-configuration-2"></a>Model element configuration</h8>
+<div class="paragraph">
+<p>This component is activated only for model element having a value for the <code>agile.architecture.scm.project</code> property.
+Additionnally, path to element in repository can be configured with the <code>agile.architecture.scm.path</code> property, also to define in Architure class.
+And readme name can be configured by setting the <code>agile.architecture.scm.readme.path</code> which will be concatenated to <code>agile.architecture.scm.path</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="documentscollector"><a class="anchor" href="#documentscollector"></a>DocumentsCollector</h6>
+<div class="paragraph">
+<p>This component is an internal none, that will collect all files in <code>${ENHANCEMENTS_DIR}</code> and incldue them in the good sections.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="graphemitter"><a class="anchor" href="#graphemitter"></a>GraphEmitter</h6>
+<div class="paragraph">
+<p>This component generates all the diagrams defined in Architecture class.</p>
+</div>
+<div class="sect6">
+<h7 id="configuration-4"><a class="anchor" href="#configuration-4"></a>Configuration</h7>
+<div class="sect7">
+<h8 id="system-properties-4"><a class="anchor" href="#system-properties-4"></a>System properties</h8>
+<div class="paragraph">
+<p>The component can be forced to rewrite the generated files by the common <code>force</code> flag.</p>
+</div>
+<div class="paragraph">
+<p>Diagrams will be generated in <code>agile.architecture.diagrams</code> folder, which defaults in Java code to <code>target/structurizr/architecture</code>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="sect3">
-<h4 id="adr-tickets-extractor"><a class="anchor" href="#adr-tickets-extractor"></a>1.1. adr-tickets-extractor</h4>
+<h4 id="adr-tickets-extractor"><a class="anchor" href="#adr-tickets-extractor"></a>1.2. adr-tickets-extractor</h4>
 <div class="paragraph">
 <p><a href="https://github.com/Riduidel/agile-architecture-documentation-system//blob/master/adr-tickets-extractor">See on <span class="icon"><i class="fa fa-github"></i></span> GitHub</a></p>
 </div>
@@ -540,12 +691,12 @@ and have the issue tracker content emitted as documentation.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>And that&#8217;s all! the auto-include feature of agile-architecture-documentation-system will make sure the tickets are included, so the only thing you have to do is to go into the decision-log section to add a decision indicating your desire to switch to decisions stored in an issue tracker.</p>
+<p>And that&#8217;s all! The <code>ImplicitIncludeManager</code> of agile-architecture-documentation-system will make sure the tickets are included, so the only thing you have to do is to go into the decision-log section to add a decision indicating your desire to switch to decisions stored in an issue tracker.</p>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="cdi-config-extension"><a class="anchor" href="#cdi-config-extension"></a>1.2. cdi-config-extension</h4>
+<h4 id="cdi-config-extension"><a class="anchor" href="#cdi-config-extension"></a>1.3. cdi-config-extension</h4>
 <div class="paragraph">
 <p><a href="https://github.com/Riduidel/agile-architecture-documentation-system//blob/master/cdi-config-extension">See on <span class="icon"><i class="fa fa-github"></i></span> GitHub</a></p>
 </div>
@@ -565,15 +716,39 @@ Typically, there is</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="github-scm-handler"><a class="anchor" href="#github-scm-handler"></a>1.3. github-scm-handler</h4>
+<h4 id="github-scm-handler"><a class="anchor" href="#github-scm-handler"></a>1.4. github-scm-handler</h4>
 <div class="paragraph">
 <p><a href="https://github.com/Riduidel/agile-architecture-documentation-system//blob/master/github-scm-handler">See on <span class="icon"><i class="fa fa-github"></i></span> GitHub</a></p>
 </div>
+<div class="sect4">
+<h5 id="github-scm-handler-2"><a class="anchor" href="#github-scm-handler-2"></a>github-scm-handler</h5>
+<div class="paragraph">
+<p>SCM Handler for GitHub project.</p>
+</div>
+<div class="paragraph">
+<p>This handler defines implementations of the <code>SCMHandler</code> and <code>TicketsHandler</code> interface.</p>
+</div>
+<div class="paragraph">
+<p>This handler requires the system property <code>agile.architecture.github.token</code> to be set to a valid GitHub token.</p>
+</div>
+</div>
 </div>
 <div class="sect3">
-<h4 id="gitlab-scm-handler"><a class="anchor" href="#gitlab-scm-handler"></a>1.4. gitlab-scm-handler</h4>
+<h4 id="gitlab-scm-handler"><a class="anchor" href="#gitlab-scm-handler"></a>1.5. gitlab-scm-handler</h4>
 <div class="paragraph">
 <p><a href="https://github.com/Riduidel/agile-architecture-documentation-system//blob/master/gitlab-scm-handler">See on <span class="icon"><i class="fa fa-github"></i></span> GitHub</a></p>
+</div>
+<div class="sect4">
+<h5 id="github-scm-handler-3"><a class="anchor" href="#github-scm-handler-3"></a>github-scm-handler</h5>
+<div class="paragraph">
+<p>SCM Handler for GitHub project.</p>
+</div>
+<div class="paragraph">
+<p>This handler defines implementations of the <code>SCMHandler</code> interface.</p>
+</div>
+<div class="paragraph">
+<p>This handler requires the system property <code>agile.architecture.gitlab.token</code> to be set to a valid GitLab token.</p>
+</div>
 </div>
 </div>
 </div>
@@ -581,7 +756,7 @@ Typically, there is</p>
 <div id="footer">
 <div id="footer-text">
 Version 0.0.4-SNAPSHOT<br>
-Last updated 2020-06-22 18:25:16 UTC
+Last updated 2020-06-24 15:07:19 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
